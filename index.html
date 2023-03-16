@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border: 1px solid;
+        border-collapse: collapse;
+      }
+      tr,
+      th,
+      td {
+        border: 1px solid;
+        padding: 3px;
+      }
+      th {
+        background-color: rgb(55, 32, 32);
+        color: white;
+      }
+      #header {
+        background-color: rgb(120, 50, 50);
+        color: white;
+        border-bottom: 1px solid;
+      }
+      #btn-1 {
+        border: 1px solid blue;
+        padding: 5px 100px;
+        border-radius: 3px;
+        margin-top: 12px;
+        cursor: pointer;
+      }
+      #btn-2 {
+        border: 1px solid;
+        padding: 5px 107px;
+        border-radius: 3px;
+        margin-top: 5px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+      #label {
+        border: 1px solid;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .result {
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <table>
+        <tr>
+          <th id="header" colspan="3">Coffee Shop</th>
+        </tr>
+        <tr>
+          <th>Coffee Brands</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td>Death Wish Coffee</td>
+          <td>200 Rs.</td>
+          <td><input type="number" id="a" value="0" /></td>
+        </tr>
+        <tr>
+          <td>Starbucks French Coffee</td>
+          <td>250 Rs.</td>
+          <td><input type="number" id="b" value="0" /></td>
+        </tr>
+        <tr>
+          <td>Rising Sun Peaberry Coffee</td>
+          <td>300 Rs.</td>
+          <td><input type="number" id="c" value="0" /></td>
+        </tr>
+        <tr>
+          <td>Lavazza Super Cremo Coffee</td>
+          <td>350 Rs.</td>
+          <td><input type="number" id="d" value="0" /></td>
+        </tr>
+        <tr>
+          <td>Hawaina Cold Blnd Coffee</td>
+          <td>400 Rs.</td>
+          <td><input type="number" id="e" value="0" /></td>
+        </tr>
+      </table>
+      <button id="btn-1" type="button" onclick="total()">Confirm Order</button>
+      <br />
+      <button id="btn-2" type="button" onclick="cls()">Clear Order</button>
+      <br />
+
+      <lable id="label">Total Cost(Rs.)
+        <input type="text" disabled class="result" id="f" placeholder="Total Cose Is...."/></lable>
+    </center>
+
+    <script>
+      function total() {
+        var qty1 = parseInt(document.getElementById("a").value);
+        var sum = qty1 * 200;
+        var qty2 = parseInt(document.getElementById("b").value);
+        sum = sum + qty2 * 250;
+        var qty3 = parseInt(document.getElementById("c").value);
+        sum = sum + qty3 * 300;
+        var qty4 = parseInt(document.getElementById("d").value);
+        sum = sum + qty4 * 350;
+        var qty5 = parseInt(document.getElementById("e").value);
+        sum = sum + qty5 * 400;
+
+        if (qty1 < "0" || qty2 < "0" || qty3 < "0" || qty4 < "0" || qty5 < "0") {
+          alert("Invalid");
+        } else {
+          var res = document.getElementById("f");
+          res.value = sum;
+        }
+      }
+
+      function cls() {
+        document.getElementById("a").value = "0";
+        document.getElementById("b").value = "0";
+        document.getElementById("c").value = "0";
+        document.getElementById("d").value = "0";
+        document.getElementById("e").value = "0";
+        document.getElementById("f").value = " ";
+      }
+    </script>
+  </body>
+</html>
